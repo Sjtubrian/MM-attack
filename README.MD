@@ -27,11 +27,11 @@ CUDA: 10.1
 # Citation
 If you are using this code for your own researching, please consider citing
 ```
-@inproceedings{gao2020maximum,
-  title={Maximum Mean Discrepancy is Aware of Adversarial Attacks},
-  author={Gao, Ruize and Liu, Feng and Zhang, Jingfeng and Han, Bo and Liu, Tongliang and Niu, Gang and Sugiyama, Masashi},
-  booktitle={ICML},
-  year={2021}
+@article{gao2022fast,
+  title={Fast and Reliable Evaluation of Adversarial Robustness with Minimum-Margin Attack},
+  author={Gao, Ruize and Wang, Jiongxiao and Zhou, Kaiwen and Liu, Feng and Xie, Binghui and Niu, Gang and Han, Bo and Cheng, James},
+  journal={arXiv preprint arXiv:2206.07314},
+  year={2022}
 }
 ```
 
