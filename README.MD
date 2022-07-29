@@ -27,10 +27,10 @@ CUDA: 10.1
 # Citation
 If you are using this code for your own researching, please consider citing
 ```
-@article{gao2022fast,
+@inproceedings{gao2022fast,
   title={Fast and Reliable Evaluation of Adversarial Robustness with Minimum-Margin Attack},
   author={Gao, Ruize and Wang, Jiongxiao and Zhou, Kaiwen and Liu, Feng and Xie, Binghui and Niu, Gang and Han, Bo and Cheng, James},
-  journal={arXiv preprint arXiv:2206.07314},
+  booktitle={ICML},
   year={2022}
 }
 ```
