@@ -10,7 +10,7 @@ from utils import Logger
 import os
 
 # Nomal CW loss
-def cwloss(output, target,confidence=50, num_classes=10):
+def  cwloss(output, target,confidence=50, num_classes=10):
     target = target.data
     target_onehot = torch.zeros(target.size() + (num_classes,))
     target_onehot = target_onehot.cuda()
@@ -118,7 +118,7 @@ def tpgd(model, data, target, epsilon, step_size, step1_size, num_steps,loss_fn,
 
 
 # evaluation for clean examples
-def eval_clean(model, test_loader, num_classes):
+def eval_clean(model, test_loader):
     model.eval()
     test_loss = 0
     correct = 0
@@ -251,9 +251,9 @@ def eval_robust_mmu_sequential(model, test_loader, perturb_steps, epsilon, step_
     return test_loss, robust_accuracy, time
 
 # evaluation for autoattack
-def eval_robust_auto(model, test_loader, perturb_steps, epsilon, step_size, loss_fn, category, rand_init,num_classes):
+def eval_robust_auto(model, test_loader, perturb_steps, epsilon, loss_fn):
     starttime = datetime.datetime.now()
-    apgd = APGDAttack(model, n_restarts=1, n_iter=100, verbose=False,
+    apgd = APGDAttack(model, n_restarts=1, n_iter=perturb_steps, verbose=False,
                 eps=epsilon, norm='Linf', eot_iter=1, rho=.75, seed=1, device='cuda')
     
     # apgd = APGDAttack_targeted(model, n_restarts=1, n_iter=100, verbose=False,
@@ -278,9 +278,9 @@ def eval_robust_auto(model, test_loader, perturb_steps, epsilon, step_size, loss
     return test_loss, test_accuracy, time
 
 # evaluation for fab
-def eval_robust_auto_fab(model, test_loader, perturb_steps, epsilon, step_size, loss_fn, category, rand_init,num_classes):
+def eval_robust_auto_fab(model, test_loader, perturb_steps, epsilon):
     starttime = datetime.datetime.now()
-    fab = FABAttack_PT(model, n_restarts=1, n_iter=100, eps=epsilon, seed=1,
+    fab = FABAttack_PT(model, n_restarts=1, n_iter=perturb_steps, eps=epsilon, seed=1,
                 norm='Linf', verbose=False, device='cuda')
     model.eval()
     test_loss = 0
@@ -302,7 +302,7 @@ def eval_robust_auto_fab(model, test_loader, perturb_steps, epsilon, step_size, 
     return test_loss, test_accuracy, time
 
 # evaluation for square
-def eval_robust_auto_square(model, test_loader, perturb_steps, epsilon, step_size, loss_fn, category, rand_init,num_classes):
+def eval_robust_auto_square(model, test_loader, epsilon):
     starttime = datetime.datetime.now()
     square = SquareAttack(model, p_init=.8, n_queries=5000, eps=epsilon, norm='Linf',
             n_restarts=1, seed=1, verbose=False, device='cuda', resc_schedule=False)
@@ -353,7 +353,7 @@ def eval_robust_auto_topk_target(model, test_loader, perturb_steps, epsilon, ste
     time = (endtime - starttime).seconds
     return test_loss, test_accuracy, time
 
-def eval_robust_mm_sequential(model, test_loader, perturb_steps, epsilon, step_size, loss_fn, category, rand_init,k,num_classes):
+def eval_robust_mm_sequential(model, test_loader, perturb_steps, epsilon, loss_fn, k):
     starttime = datetime.datetime.now()
     model.eval()
     test_loss = 0
