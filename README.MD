@@ -14,10 +14,6 @@ Minimum-Margin Attack". This work is done by
 # Software
 We recommend users to install python via Anaconda (python 3.7.3), which can be downloaded from https://www.anaconda.com/distribution/#download-section.  
 
-Most codes require freqopttest repo (interpretable nonparametric two-sample test) to implement ME and SCF tests, which can be installed by  
-```
-pip install git+https://github.com/wittawatj/interpretable-test
-```
 Torch: 1.1.0  
 
 Python: 3.7.3  
