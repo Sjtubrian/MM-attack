@@ -3,7 +3,7 @@
 Hi, this is the pytorch code for MM attack, presented in the ICML2022 paper " Fast and Reliable Evaluation of Adversarial Robustness with
 Minimum-Margin Attack". This work is done by  
 
-- Ruize Gao (CUHK), sjtu16.brian.gao@gmail.com
+- Ruize Gao (CUHK), ruizegao@comp.nus.edu.sg/sjtu16.brian.gao@gmail.com
 - Jiongxiao Wang (CUHK), 17300180069@fudan.edu.cn
 - Kaiwen Zhou (CUHK), kwzhou@cse.cuhk.edu.hk
 - Feng Liu (UTS), feng.liu1@unimelb.edu.au  
