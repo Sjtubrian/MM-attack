@@ -27,6 +27,16 @@ python mm_attack.py --resume YOUR_MODEL --mode compare
 ```
 You will get the model accuracy and time of all the attack methods mentioned in our paper for comparison.
 
+If you want to compare MM Attack with AutoAttack, please install the auto-attack package  
+```
+pip install git+https://github.com/fra31/auto-attack
+```
+
+Then you can run  
+```
+python autoattack_test.py --resume YOUR_MODEL
+```
+
 # Use MM Attack Only
 If you only want to use MM Attack, please run
 ```
