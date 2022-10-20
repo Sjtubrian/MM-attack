@@ -32,7 +32,7 @@ If you want to compare MM Attack with AutoAttack, please install the auto-attack
 pip install git+https://github.com/fra31/auto-attack
 ```
 
-Then you can run  
+Then you can get results of AutoAttack by running  
 ```
 python autoattack_test.py --resume YOUR_MODEL
 ```
